@@ -1,0 +1,11 @@
+@media(max-width:600px){
+    #log-div{
+        width:90vw;
+        background-color: black;
+
+    }
+    #div2{
+        background-color: black;
+    }
+}
+

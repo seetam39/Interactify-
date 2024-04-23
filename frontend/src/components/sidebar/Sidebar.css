@@ -1,0 +1,9 @@
+@media (max-width: 500px) {
+    
+    #side{
+        width: 100vw;
+        height:100vh;
+        overflow-x: hidden;
+    }
+      }
+    

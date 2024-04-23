@@ -1,0 +1,19 @@
+@media(max-width:640px){
+    #roomdiv{
+        /* transform: rotate(90deg); */
+        overflow: scroll;
+        width:100vw;
+    }
+    #roomdiv2{
+        /* width: 100vw; */
+        overflow: scroll;
+        width: 100vw;
+    }
+    
+    
+}
+
+/* #room{
+    background-image: url("/frontend/src/assets/chatbot.jpg");
+} */
+
