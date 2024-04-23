@@ -33,7 +33,7 @@ const MessageInput = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <button type='submit' className='absolute inset-y-0  end-0  pe-3 w-10 flex justify-center items-center bg-blue-700 rounded-tr-lg rounded-br-lg'>
+        <button type='submit' className='absolute inset-y-0  end-0  pe-3 w-16 flex justify-center items-center bg-blue-700 rounded-tr-lg rounded-br-lg'>
           {loading ? <div className='loading loading-spinner'></div> : <BsSend />}
         </button>
       </div>
