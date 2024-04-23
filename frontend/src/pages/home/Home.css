@@ -11,10 +11,7 @@
     bottom: 0%; */
    }
 
-   #home-div{
-    height:85vh;
-   
-   }
+  
 
 
    #div1{
@@ -40,7 +37,7 @@
   
      }
      #home-div{
-      height:93vh;
+      height:87vh;
       /* background-image:url('bg.jpg'); */
       /* background: linear-gradient(black,rgb(24, 24, 24)); */
      }
