@@ -36,7 +36,7 @@ const Login = () => {
 				</h1>
           <div className="flex flex-col mt-2 mb-7 items-center ">
                <div className="h-28 w-28 rounded-full bg-slate-100 m-auto mt-5 text-lg"><img src={img} className="rounded-full h-28 "></img></div>
-			   <p className="font-bold">Welcome <span className="text-white text-lg font-bold"> Back</span></p>
+			   <p className="font-bold text-blue-700">Welcome <span className="text-white text-lg font-bold"> Back</span></p>
 			   </div>
 				<form onSubmit={handleSubmit}>
 					<div className="text-black">
