@@ -5,13 +5,17 @@ import Login from "./pages/login/Login";
 import SignUp from "./pages/signup/SignUp";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext";
-// import Room from "./pages/room/Room";
+import Room from "./pages/room/Room";
 import RoomPage from "./pages/roomPage/roompage";
-import "./App.css"
+import useFriendSocketEvents from "./hooks/useFriendSocketEvents";
 
 
 function App() {
 	const { authUser } = useAuthContext();
+	
+	// Initialize socket event listeners for friend-related updates
+	useFriendSocketEvents();
+	
 	return (
 		<div className='p-4 h-screen flex items-center justify-center'>
 			<Routes>

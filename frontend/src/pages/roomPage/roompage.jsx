@@ -6,10 +6,10 @@ function RoomPage() {
     const {roomId} =useParams();
 
     const myMeeting = async(element)=>{
-        const appID =1140336058 ;
-        const serverSecret = "94a8c128481f82cef7bcadf10807cffc";
+        const appID =2091314671;
+        const serverSecret = "49bf366ff44f5a447efb3b9b1dd69132   ";
 
-        const kitToken =  ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret,roomId,Date.now().toString(),'sam');
+        const kitToken =  ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret,roomId,Date.now().toString(),'user');
         const zc = ZegoUIKitPrebuilt.create(kitToken);
         zc.joinRoom({
             container:element,
