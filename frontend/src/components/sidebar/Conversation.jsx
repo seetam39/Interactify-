@@ -1,5 +1,8 @@
 import { useSocketContext } from "../../context/SocketContext";
 import useConversation from "../../zustand/useConversation";
+import { FaTrash } from "react-icons/fa";
+import toast from "react-hot-toast";
+import FriendEvents from "../../utils/friendEvents";
 
 const Conversation = ({ conversation, lastIdx, emoji }) => {
 	const { selectedConversation, setSelectedConversation } = useConversation();
@@ -7,6 +10,27 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
 	const isSelected = selectedConversation?._id === conversation._id;
 	const { onlineUsers } = useSocketContext();
 	const isOnline = onlineUsers.includes(conversation._id);
+
+	const handleRemoveFriend = async (e) => {
+		e.stopPropagation();
+		try {
+			const res = await fetch(`/api/friends/remove/${conversation._id}`, {
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+			const data = await res.json();
+			if (data.error) {
+				throw new Error(data.error);
+			}
+			toast.success(data.message);
+			// Emit event to refresh conversations without page reload
+			FriendEvents.emit("friendsUpdated", {});
+		} catch (error) {
+			toast.error(error.message);
+		}
+	};
 
 	return (
 		<>
@@ -28,6 +52,14 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
 						{/* <span className='text-xl'>{emoji}</span> */}
 					</div>
 				</div>
+
+				<button 
+					onClick={handleRemoveFriend}
+					className="text-red-400 hover:text-red-300 p-1"
+					title="Remove friend"
+				>
+					<FaTrash className="text-sm" />
+				</button>
 			</div>
 
 			{!lastIdx && <div className='divider my-0 py-0 h-1' />}
