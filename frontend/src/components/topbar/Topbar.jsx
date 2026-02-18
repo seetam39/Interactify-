@@ -46,7 +46,7 @@ function Topbar() {
                     <Chatbot/>
                 </div>
 
-                <button onClick={friendRequestsfunc} className="absolute right-24 relative">
+                <button onClick={friendRequestsfunc} className="absolute right-48 relative">
                     <FaUserFriends className="text-4xl" />
                     {requests.length > 0 && (
                         <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -54,7 +54,7 @@ function Topbar() {
                         </span>
                     )}
                 </button>
-                <div className={`h-96 w-80 bg-white shadow-lg border-black absolute top-2 right-24 z-50 overflow-y-auto ${friendRequestsOpen}`} id="friendRequests">
+                <div className={`h-96 w-80 bg-white shadow-lg border-black absolute top-2 right-48 z-50 overflow-y-auto ${friendRequestsOpen}`} id="friendRequests">
                     <div className="flex justify-between items-center p-3 border-b">
                         <h2 className="font-bold text-lg">Friend Requests</h2>
                         <button onClick={closefunc}><ImCross /></button>
